@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "738036442933",
+    "project_id": "studentbuddy-d66bc",
+    "storage_bucket": "studentbuddy-d66bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738036442933:android:1145b2719da74ccccfce7c",
+        "android_client_info": {
+          "package_name": "com.example.proj1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738036442933-c48j1hcpe3622jkqsu4crkaajpbl4j5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpLcaIgTP1vhQLdcOihcTAPUMT3f5Bmto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738036442933-c48j1hcpe3622jkqsu4crkaajpbl4j5f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
