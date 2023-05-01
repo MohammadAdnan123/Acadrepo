@@ -1,5 +1,5 @@
-import 'package:proj1/models/models_model.dart';
-import 'package:proj1/services/api_service.dart';
+import 'package:JSAHub/models/models_model.dart';
+import 'package:JSAHub/services/api_service.dart';
 import 'package:flutter/cupertino.dart';
 
 class ModelsProvider with ChangeNotifier {

@@ -1,14 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:proj1/Dash_board/cards.dart';
-import 'package:proj1/constants/constants.dart';
-import 'package:proj1/providers/chats_provider.dart';
-import 'package:proj1/providers/models_provider.dart';
-import 'package:proj1/resources/auth_method.dart';
-import 'package:proj1/screens/chat_screen.dart';
-import 'package:proj1/screens/login_screen.dart';
+import 'package:JSAHub/Dash_board/cards.dart';
+import 'package:JSAHub/constants/constants.dart';
+import 'package:JSAHub/providers/chats_provider.dart';
+import 'package:JSAHub/providers/models_provider.dart';
+import 'package:JSAHub/resources/auth_method.dart';
+import 'package:JSAHub/screens/chat_screen.dart';
+import 'package:JSAHub/screens/login_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path/path.dart' as path;
@@ -55,7 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
     await Authmethod().signOut();
     Navigator.pop(context);
     Navigator.of(context).pushReplacement(MaterialPageRoute(
-      builder: (context) => LogincScreen(),
+      builder: (context) => const LogincScreen(),
     ));
   }
 
@@ -74,12 +73,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
     subjectNames = getSubjectNames(department, branch, semester);
     
     return Scaffold(
+      backgroundColor: Colors.black,
         body: DefaultTabController(
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
+          backgroundColor: Colors.redAccent,
           title: Text("Semester $semester"),
+          titleTextStyle: const TextStyle(color: Colors.white, fontSize: 20),
           bottom: const PreferredSize(
             preferredSize: Size.fromHeight(40),
             child: Align(
@@ -90,8 +91,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       TextStyle(fontWeight: FontWeight.normal),
                   unselectedLabelColor: Colors.black,
                   indicatorSize: TabBarIndicatorSize.label,
-                  indicatorColor: Colors.red,
-                  labelColor: Colors.red,
+                  indicatorColor: Colors.white,
+                  labelColor: Colors.white,
                   labelStyle: TextStyle(fontWeight: FontWeight.bold),
                   tabs: [
                     Tab(
@@ -115,7 +116,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
           actions: <Widget>[
             PopupMenuButton(
-              icon: const Icon(Icons.person),
+              icon: const Icon(Icons.person, color: Colors.white,),
               itemBuilder: (BuildContext context) {
                 return [
                   PopupMenuItem(
@@ -144,7 +145,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
           ],
         ),
-        backgroundColor: Colors.white12,
+        backgroundColor: Colors.white,
         body: TabBarView(
           children: [
             Column(
@@ -155,7 +156,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         future: subjectNames,
                         builder: (context, snapshot) {
                           if (snapshot.hasData) {
-                            print(snapshot.data!.prefixes.length);
                             final itemCount = snapshot.data != null
                                 ? snapshot.data!.prefixes.length
                                 : 0;
@@ -180,9 +180,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           } else if (snapshot.hasError) {
                             return Text("Error: ${snapshot.error}");
                           } else {
-                            return const SpinKitFoldingCube(
-                              color: Colors.black,
-                              size: 18,
+                            return Scaffold(
+                              body: Center(
+                                child: Image.asset("assets/images/pendulum.gif")
+                                )
                             );
                           }
                         }))

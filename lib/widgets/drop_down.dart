@@ -1,5 +1,5 @@
-import 'package:proj1/providers/models_provider.dart';
-import 'package:proj1/widgets/text_widget.dart';
+import 'package:JSAHub/providers/models_provider.dart';
+import 'package:JSAHub/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';

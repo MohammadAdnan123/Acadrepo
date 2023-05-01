@@ -6,8 +6,8 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:proj1/screens/login_screen.dart';
-import 'package:proj1/widgets/text_input.dart';
+import 'package:JSAHub/screens/login_screen.dart';
+import 'package:JSAHub/widgets/text_input.dart';
 
 
 
@@ -64,7 +64,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
   //   });
 final storage = FirebaseStorage.instance.ref();
 final Reference ref = storage.child("user.txt");
-  print("ref => $ref");
 final String textToAppend = '{"name": $username, "email": $useremail, "password": $userpassword, "department": $userdep, "branch": $userbranch, "semester": $usersem}';
 
 
@@ -74,13 +73,9 @@ final data = await ref.getData();
 // Convert the byte array to a string
 final contents = utf8.decode(data!.toList());
 
-print("***************");
-print(contents);
-print("***************");
 
 // Append the new string to the existing contents
 final newContents = '$contents \n $textToAppend';
-print(newContents);
 
 // Convert the string to a byte array
 // final newData = utf8.encode(newContents);

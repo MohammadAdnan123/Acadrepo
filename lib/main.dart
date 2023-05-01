@@ -2,7 +2,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:proj1/Dash_board/dashboard_screen.dart';
+import 'package:JSAHub/Dash_board/dashboard_screen.dart';
 import './screens/login_screen.dart';
 
 void main() async {
@@ -21,13 +21,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.red,
         ),
         home: AnimatedSplashScreen(
           splash: Center(
               child:
-                  Image.asset('assets/images/pornhub-community-pornhub.gif')),
-          duration: 1000,
+                  Image.asset('assets/images/video.gif')),
+          // duration: 3500,
           splashTransition: SplashTransition.fadeTransition,
           backgroundColor: Colors.black,
           nextScreen: StreamBuilder(

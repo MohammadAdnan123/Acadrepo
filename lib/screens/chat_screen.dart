@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:proj1/constants/constants.dart';
-import 'package:proj1/providers/chats_provider.dart';
-import 'package:proj1/services/services.dart';
-import 'package:proj1/widgets/chat_widget.dart';
+import 'package:JSAHub/constants/constants.dart';
+import 'package:JSAHub/providers/chats_provider.dart';
+import 'package:JSAHub/services/services.dart';
+import 'package:JSAHub/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:provider/provider.dart';
@@ -167,17 +167,12 @@ class _ChatScreenState extends State<ChatScreen> {
       String msg = textEditingController.text;
       setState(() {
         _isTyping = true;
-        // chatList.add(ChatModel(msg: textEditingController.text, chatIndex: 0));
         chatProvider.addUserMessage(msg: msg);
         textEditingController.clear();
         focusNode.unfocus();
       });
       await chatProvider.sendMessageAndGetAnswers(
           msg: msg, chosenModelId: modelsProvider.getCurrentModel);
-      // chatList.addAll(await ApiService.sendMessage(
-      //   message: textEditingController.text,
-      //   modelId: modelsProvider.getCurrentModel,
-      // ));
       setState(() {});
     } catch (error) {
       log("error $error");

@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-import 'package:proj1/Dash_board/dashboard_screen.dart';
-import 'package:proj1/resources/auth_method.dart';
-import 'package:proj1/screens/payment_screen.dart';
-import 'package:proj1/util/utils.dart';
-// import 'package:proj1/widgets/text_input.dart';
+import 'package:JSAHub/Dash_board/dashboard_screen.dart';
+import 'package:JSAHub/resources/auth_method.dart';
+import 'package:JSAHub/screens/payment_screen.dart';
+import 'package:JSAHub/util/utils.dart';
 import 'package:rive/rive.dart';
 
 import 'contact_screen.dart';

@@ -3,6 +3,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 import 'package:flutter_windowmanager/flutter_windowmanager.dart';
+import 'package:path/path.dart' as path;
 
 final storage = FirebaseStorage.instance.ref();
 
@@ -30,14 +31,15 @@ class _pdfViewerState extends State<pdfViewer> {
   Future<void> secureScreen() async {
 await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE); 
 }
-  // PdfViewerFromFirebase({required this.pdfPath});
+
   @override
   Widget build(BuildContext context) {
-    // futureFile = getpdf(widget.pdfpath);
-    // print(widget.pdfpath);
 
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(path.basenameWithoutExtension(widget.pdfpath)),
+          backgroundColor: Colors.redAccent,
+        ),
         body: FutureBuilder<String>(
           future: _getPdfUrl(widget.pdfpath),
           builder: (context, snapshot) {

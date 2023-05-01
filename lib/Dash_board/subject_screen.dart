@@ -1,7 +1,6 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:proj1/Dash_board/pdf_viewer.dart';
+import 'package:JSAHub/Dash_board/pdf_viewer.dart';
 import 'package:path/path.dart' as path;
 
 
@@ -49,10 +48,8 @@ class _SubjectScreenState extends State<SubjectScreen> {
           length: totalTabs.length,
           child: Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.amber,
+              backgroundColor: Colors.redAccent,
               title: Text(widget.subjectName),
-              titleTextStyle: const TextStyle(color: Colors.black),
-              // style: const TextStyle(color: Colors.black),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(40),
                 child: Align(
@@ -63,8 +60,8 @@ class _SubjectScreenState extends State<SubjectScreen> {
                         const TextStyle(fontWeight: FontWeight.normal),
                     unselectedLabelColor: Colors.black,
                     indicatorSize: TabBarIndicatorSize.label,
-                    indicatorColor: Colors.red,
-                    labelColor: Colors.red,
+                    indicatorColor: Colors.white,
+                    labelColor: Colors.white,
                     labelStyle: const TextStyle(fontWeight: FontWeight.normal),
                     tabs: totalTabs.map((String item) {
                       return Tab(
@@ -91,7 +88,6 @@ class _SubjectScreenState extends State<SubjectScreen> {
                             future: Notes,
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
-                                print(snapshot.data!.items.length);
                                 final itemCount = snapshot.data != null
                                     ? snapshot.data!.items.length
                                     : 0;
@@ -109,7 +105,6 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                         List<String> pdfs = [];
                                         snapshot.data!.items.forEach(
                                           (element) {
-                                            print(element.fullPath);
                                             pdfs.add((element.fullPath));
                                           },
                                         );
@@ -126,7 +121,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              color: Colors.red,
+                                              color: Colors.black45,
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
                                               boxShadow: [
@@ -156,10 +151,12 @@ class _SubjectScreenState extends State<SubjectScreen> {
                               } else if (snapshot.hasError) {
                                 return Text("Error: ${snapshot.error}");
                               } else {
-                                return const SpinKitFoldingCube(
-                                  color: Colors.black,
-                                  size: 18,
-                                );
+                                
+                                return Scaffold(
+                              body: Center(
+                                child: Image.asset("assets/images/pendulum.gif")
+                                )
+                            );
                               }
                             }))
                   ],
@@ -172,7 +169,6 @@ class _SubjectScreenState extends State<SubjectScreen> {
                             future: Papers,
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
-                                print(snapshot.data!.items.length);
                                 final itemCount = snapshot.data != null
                                     ? snapshot.data!.items.length
                                     : 0;
@@ -190,7 +186,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                         List<String> pdfs = [];
                                         snapshot.data!.items.forEach(
                                           (element) {
-                                            print(element.fullPath);
+                                            // print(element.fullPath);
                                             pdfs.add((element.fullPath));
                                           },
                                         );
@@ -207,7 +203,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              color: Colors.red,
+                                              color: Colors.black45,
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
                                               boxShadow: [
@@ -237,10 +233,12 @@ class _SubjectScreenState extends State<SubjectScreen> {
                               } else if (snapshot.hasError) {
                                 return Text("Error: ${snapshot.error}");
                               } else {
-                                return const SpinKitFoldingCube(
-                                  color: Colors.black,
-                                  size: 18,
-                                );
+                                
+                                return Scaffold(
+                              body: Center(
+                                child: Image.asset("assets/images/pendulum.gif")
+                                )
+                            );
                               }
                             }))
                   ],
@@ -253,7 +251,6 @@ class _SubjectScreenState extends State<SubjectScreen> {
                             future: Books,
                             builder: (context, snapshot) {
                               if (snapshot.hasData) {
-                                print(snapshot.data!.items.length);
                                 final itemCount = snapshot.data != null
                                     ? snapshot.data!.items.length
                                     : 0;
@@ -271,7 +268,7 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                         List<String> pdfs = [];
                                         snapshot.data!.items.forEach(
                                           (element) {
-                                            print(element.fullPath);
+                                            // print(element.fullPath);
                                             pdfs.add((element.fullPath));
                                           },
                                         );
@@ -288,13 +285,13 @@ class _SubjectScreenState extends State<SubjectScreen> {
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(
-                                              color: Colors.red,
+                                              color: Colors.black45,
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
                                               boxShadow: [
                                                 BoxShadow(
                                                   color: Colors.grey
-                                                      .withOpacity(0.5),
+                                                      .withOpacity(0.7),
                                                   spreadRadius: 5,
                                                   blurRadius: 7,
                                                   offset: const Offset(0.0,
@@ -318,10 +315,12 @@ class _SubjectScreenState extends State<SubjectScreen> {
                               } else if (snapshot.hasError) {
                                 return Text("Error: ${snapshot.error}");
                               } else {
-                                return const SpinKitFoldingCube(
-                                  color: Colors.black,
-                                  size: 18,
-                                );
+                                
+                               return Scaffold(
+                              body: Center(
+                                child: Image.asset("assets/images/pendulum.gif")
+                                )
+                            );
                               }
                             }))
                   ],

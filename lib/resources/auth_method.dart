@@ -1,10 +1,7 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:flutter/material.dart';
 
 class Authmethod{
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Future<String> loginUser({
     required String email,
     required String password
@@ -19,8 +16,13 @@ class Authmethod{
       else{
         res = "Fill details properly";
       }
-    } catch(err){
-      res = err.toString();
+    } on FirebaseAuthException catch (e){
+      if(e.code == 'user-not-found'){
+        res = "First buy the subsciption then enjoy the app.";
+      }
+      else if(e.code == 'wrong-password'){
+        res = "You should start eating almonds since you have forgotten the password.";
+      }
     }
     return res;
   }

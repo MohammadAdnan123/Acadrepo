@@ -1,4 +1,4 @@
-import 'package:proj1/Dash_board/subject_screen.dart';
+import 'package:JSAHub/Dash_board/subject_screen.dart';
 import 'package:flutter/material.dart';
 
 class CardLayout extends StatefulWidget {
@@ -23,7 +23,7 @@ class _CardLayoutState extends State<CardLayout> {
                     )));
       },
       child: Card(
-        color: Colors.redAccent,
+        color: Colors.black45,
         child: Column(
           children: [
             ListTile(

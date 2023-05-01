@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:proj1/constants/constants.dart';
-import 'package:proj1/services/assets_manager.dart';
+import 'package:JSAHub/constants/constants.dart';
+import 'package:JSAHub/services/assets_manager.dart';
 import 'package:flutter/material.dart';
 
 import 'text_widget.dart';
